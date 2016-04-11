@@ -1,8 +1,8 @@
 # your code goes here
 import sys # open the file 
 
-#define a list
-rest_list = []
+
+rest_list = [] #define a list
 file_name = sys.argv[1]
 file_data = open(file_name) # iterate and split data
 
@@ -14,7 +14,6 @@ for line in file_data: #take the newlines off
 
 rest_list.sort()
 	
-for item in rest_list:
-	rest, rating = item
-	#append to list
+for x in rest_list:
+	rest, rating = x
 	print "%s is rated at %s." % (rest, rating)
