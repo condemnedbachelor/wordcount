@@ -5,7 +5,7 @@ word_count_list = []
 # make an empty dict
 wordcount = {}
 # open the file
-file_data = open("test.txt")
+file_data = open("twain.txt")
 # take off the new line 
 # iterate through the lines
 for line in file_data:
