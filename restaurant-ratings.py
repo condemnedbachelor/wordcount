@@ -34,7 +34,10 @@ while new_rating != "q":
 	#Ask the user what the new rating should be
 	new_rating = raw_input("What should the new rating be? >>> ")
 	#Update the rating
-	rest_dict[rest] = new_rating
+	if new_rating == "q":
+		break
+	else:
+		rest_dict[rest] = new_rating
 #Choose another restaurant, repeat steps 2-4
 # sorted_dict = sorted(rest_dict)	
 for x in sorted(rest_dict):
