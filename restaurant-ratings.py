@@ -15,7 +15,12 @@ for line in file_data: #take the newlines off
 	rest_dict[rest_name] = rest_rate
 
 rest_name = raw_input("Please enter the restaurant's name. >>> ")
-rest_rate = int(raw_input ("Please enter the restaurant's rating. >>> "))
+
+try:
+	rest_rate = int(raw_input ("Please enter the restaurant's rating. >>> "))
+except ValueError:
+	rest_rate = int(raw_input ("Sorry, wrong format. Try again with a number? >>> "))
+
 rest_dict[rest_name] = rest_rate
 #sorted_dict = sorted(rest_dict)	
 
@@ -24,20 +29,25 @@ for x in sorted(rest_dict):
 
 
 #Greet the user and ask for their name
-user_name = raw_input("Hi! What's your name? >>> ")
+user_name = raw_input("Anyway, hi! What's your name? >>> ")
 #Choose a random restaurant from the list in the file
 while new_rating != "q":
 	random_rest = random.choice(rest_dict.items())
 	rest, rate = random_rest
 	#Tell the user the chosen restaurant and its rating
 	print "%s is rated at %s." % (rest, rate)
-	#Ask the user what the new rating should be
-	new_rating = raw_input("What should the new rating be? >>> ")
-	#Update the rating
-	if new_rating == "q":
-		break
-	else:
-		rest_dict[rest] = new_rating
+
+		# Ask the user what the new rating should be
+	try:
+		new_rating = raw_input("What should the new rating be? >>> ")
+		if new_rating == "q":
+			break
+		else:
+			rest_dict[rest] = int(new_rating)
+	except ValueError:
+		print "Sorry, wrong format. Try again with a number? >>> "
+		continue
+
 #Choose another restaurant, repeat steps 2-4
 # sorted_dict = sorted(rest_dict)	
 for x in sorted(rest_dict):
