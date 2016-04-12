@@ -21,7 +21,7 @@ try:
 except ValueError:
 	rest_rate = int(raw_input ("Sorry, wrong format. Try again with a number? >>> "))
 
-rest_dict[rest_name] = rest_rate
+rest_dict[rest_name.capitalize()] = rest_rate
 #sorted_dict = sorted(rest_dict)	
 
 for x in sorted(rest_dict):
