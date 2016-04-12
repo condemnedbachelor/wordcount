@@ -39,13 +39,15 @@ while new_rating != "q":
 
 		# Ask the user what the new rating should be
 	try:
-		new_rating = raw_input("What should the new rating be? >>> ")
+		user_name = user_name.capitalize()
+		new_rating = raw_input("So {}, what should the new rating be? >>> ".format(user_name))
 		if new_rating == "q":
 			break
 		else:
 			rest_dict[rest] = int(new_rating)
 	except ValueError:
-		print "Sorry, wrong format. Try again with a number? >>> "
+		user_name = user_name.capitalize()
+		print "Sorry {}, wrong format. Try again with a number? >>> ".format(user_name)
 		continue
 
 #Choose another restaurant, repeat steps 2-4
