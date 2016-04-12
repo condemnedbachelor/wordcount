@@ -17,9 +17,9 @@ for line in file_data: #take the newlines off
 rest_name = raw_input("Please enter the restaurant's name. >>> ")
 rest_rate = int(raw_input ("Please enter the restaurant's rating. >>> "))
 rest_dict[rest_name] = rest_rate
-sorted_dict = sorted(rest_dict)	
+#sorted_dict = sorted(rest_dict)	
 
-for x in rest_dict:
+for x in sorted(rest_dict):
 	print "%s is rated at %s." % (x, rest_dict[x])
 
 
@@ -36,5 +36,7 @@ while new_rating != "q":
 	#Update the rating
 	rest_dict[rest] = new_rating
 #Choose another restaurant, repeat steps 2-4
-
+# sorted_dict = sorted(rest_dict)	
+for x in sorted(rest_dict):
+	print "%s is rated at %s." % (x, rest_dict[x])
 #Continue until the user types q.
